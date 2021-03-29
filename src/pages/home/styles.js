@@ -114,9 +114,11 @@ export const Post = styled.div`
     list-style: none;
     display: flex;
     margin-top: 0.5rem;
+    flex-wrap: wrap;
   
     li{
       margin-right: 1rem;
+      color: #5965e0;
     }
   }
 
