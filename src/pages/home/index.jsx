@@ -49,16 +49,16 @@ export function Home(){
           </form>
         </Header>
         <ToolsPost>
-          {posts.map(post => (
-        <Post>
-          <h3>{post.title}</h3>
-          <p>{post.description}</p>
-          <ul>
-          {post.tags.map(tag => (
-            <li>#{tag}</li>
-          ))}
-          </ul>
-        </Post>
+        {posts.map(post => (
+          <Post key={post.id}>
+            <h3>{post.title}</h3>
+            <p>{post.description}</p>
+            <ul>
+            {post.tags.map(tag => (
+              <li>#{tag}</li>
+            ))}
+            </ul>
+          </Post>
         ))}
       </ToolsPost>
       </Content>

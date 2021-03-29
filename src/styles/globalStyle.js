@@ -32,14 +32,6 @@ const GlobalStyle = createGlobalStyle`
   }
 }
 
-html{
-  background: linear-gradient(0deg,rgb(49 49 49) -82%,rgba(0,0,0,1) 100%) no-repeat;
-
-}
-
-body {
-  color: var(--white);
-}
 
 body, input, textarea, button{
   font: 400 1rem 'Inter', sans-serif;

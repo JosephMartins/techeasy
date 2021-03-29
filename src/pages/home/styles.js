@@ -5,6 +5,8 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
+  background: linear-gradient(0deg,rgb(49 49 49) -82%,rgba(0,0,0,1) 100%) no-repeat;
+  height: 100vh;
 `; 
 
 
@@ -19,18 +21,21 @@ export const Header = styled.div`
   h1{
     margin-top: 5rem;
     font-size: 3.8rem;
+    color: #fff;
     font-weight: 600;
   }
 
   h3{
     font-size: 2rem;
     margin-top: 2rem;
+    color: #fff;
+
   }
 
   form{
     display: flex;
     margin-top: 2rem;
-
+    color: #fff;
     width: 100%;
     justify-content: space-between;
 
@@ -41,10 +46,10 @@ export const Header = styled.div`
       width: 5rem;
       border-radius: 0.5rem;
       background: #5965e0;
-      color: white;
+      color: #fff;
       border: none;
-
       height: 2rem;
+
     }
   }
 

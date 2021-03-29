@@ -8,7 +8,7 @@ import { api } from '../../service/api';
 import { Container } from './styles';
 
 
-export function NewToolsModal({isOpen, onRequestClose, setPosts, posts}){
+export function NewToolsModal({isOpen, onRequestClose}){
   const [title, setTitle] = useState('');
   const [link, setLink] = useState('');
   const [description, setDescription] = useState('');
