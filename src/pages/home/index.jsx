@@ -1,13 +1,20 @@
+import { useEffect, useState } from 'react';
+import { api } from '../../service/api';
 import {Container, Content, Header, Input, ToolsPost, Post } from './styles';
 
 export function Home(){
+  const [posts, setPosts] = useState([]);
+    useEffect(() => {
+       api.get('/').then(response => {
+        setPosts(response.data);
+      });
+    }, []);
   return(
     <Container>
       <Content>
         <Header>
           <h1>VUTTR</h1>
           <h3>Very Useful Tools to Remember</h3>
-
           <form action="">
             <div className="input-group">
             <Input>
@@ -21,82 +28,20 @@ export function Home(){
             <button>Add</button>
           </form>
         </Header>
-
         <ToolsPost>
+          {posts.map(post => (
         <Post>
-          <h3>Json-server</h3>
-          <p>Uma orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the l</p>
+          <h3>{post.title}</h3>
+          <p>{post.description}</p>
           <ul>
-            <li>#web</li>
-            <li>#react</li>
-            <li>#jwt</li>
+          {post.tags.map(tag => (
+            <li>#{tag}</li>
+          ))}
           </ul>
         </Post>
-        <Post>
-          <h3>Json-server</h3>
-          <p>Uma orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the l</p>
-          <ul>
-            <li>#web</li>
-            <li>#react</li>
-            <li>#jwt</li>
-          </ul>
-        </Post>
-
-        <Post>
-          <h3>Json-server</h3>
-          <p>Uma orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the l</p>
-          <ul>
-            <li>#web</li>
-            <li>#react</li>
-            <li>#jwt</li>
-          </ul>
-        </Post>
-
-        <Post>
-          <h3>Json-server</h3>
-          <p>Uma orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the l</p>
-          <ul>
-            <li>#web</li>
-            <li>#react</li>
-            <li>#jwt</li>
-          </ul>
-        </Post>
-
-        <Post>
-          <h3>Json-server</h3>
-          <p>Uma orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the l</p>
-          <ul>
-            <li>#web</li>
-            <li>#react</li>
-            <li>#jwt</li>
-          </ul>
-        </Post>
-
-        <Post>
-          <h3>Json-server</h3>
-          <p>Uma orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the l</p>
-          <ul>
-            <li>#web</li>
-            <li>#react</li>
-            <li>#jwt</li>
-          </ul>
-        </Post>
-
-        <Post>
-          <h3>Json-server</h3>
-          <p>Uma orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the l</p>
-          <ul>
-            <li>#web</li>
-            <li>#react</li>
-            <li>#jwt</li>
-          </ul>
-        </Post>
-
-        
+        ))}
       </ToolsPost>
       </Content>
-
-      
     </Container>
   );
 }

@@ -40,6 +40,9 @@ export const Header = styled.div`
       justify-content: center;
       width: 5rem;
       border-radius: 0.5rem;
+      background: #5965e0;
+      color: white;
+      border: none;
 
       height: 2rem;
     }
