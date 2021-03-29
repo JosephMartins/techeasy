@@ -1,14 +1,28 @@
 import { useEffect, useState } from 'react';
 import { api } from '../../service/api';
 import {Container, Content, Header, Input, ToolsPost, Post } from './styles';
+import {NewToolsModal} from '../../components/newToolsModal';
 
 export function Home(){
+  const [isNewToolsModal, setIsNewToolsModal] = useState(false);
   const [posts, setPosts] = useState([]);
+
+
     useEffect(() => {
        api.get('/').then(response => {
         setPosts(response.data);
       });
     }, []);
+
+    function handleOpenNewToolsModal(){
+      setIsNewToolsModal(true);
+    }
+
+    function handleCloseNewToolsModal(){
+      setIsNewToolsModal(false);
+    }
+
+
   return(
     <Container>
       <Content>
@@ -25,7 +39,13 @@ export function Home(){
                 search in tags only
               </label>
             </div>
-            <button>Add</button>
+            <button  onClick={handleOpenNewToolsModal} type="button">Add</button>
+            <NewToolsModal 
+            isOpen={isNewToolsModal} 
+            setPosts={setPosts}
+            posts={posts}
+            onRequestClose={handleCloseNewToolsModal}
+            />
           </form>
         </Header>
         <ToolsPost>

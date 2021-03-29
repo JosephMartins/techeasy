@@ -122,4 +122,7 @@ export const Post = styled.div`
     }
   }
 
+
+  
+
 `;
