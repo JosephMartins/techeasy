@@ -9,14 +9,14 @@ https://techeasy.netlify.app/
 
 ##Techs utilizadas
 
-> React-router-dom
-> ReactJS
-> Axios
-> React Modal
-> Styled-components
-> CSS
-> HTML
-> ContextAPI
+* React-router-dom
+* ReactJS
+* Axios
+* React Modal
+* Styled-components
+* CSS
+* HTML
+* ContextAPI
 
 Projeto encontra-se em andamento 
 
