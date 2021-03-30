@@ -27,7 +27,7 @@ clone o projeto
 ``` 
 git clone https://github.com/JosephMartins/techeasy.git
 ```
->> Execute o seguinte comando para instalaçao de dependencias:
+>> Execute o seguinte comando para instalaçao de dependencias dentro da pasta techeasy:
 ``` 
 yarn
 ```
