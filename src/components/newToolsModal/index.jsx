@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Modal from 'react-modal';
 
 import closeImg from '../../assets/close.svg';
+import { useAuth } from '../../hooks/auth';
 
 
 import { Container } from './styles';
@@ -10,8 +11,13 @@ import { Container } from './styles';
 export function NewToolsModal({isOpen, onRequestClose, createTools}){
   const [title, setTitle] = useState('');
   const [link, setLink] = useState('');
+  const { user } = useAuth();
+
   const [description, setDescription] = useState('');
   const [tags, setTags] = useState('');
+
+  console.log();
+
 
   function tagFormatted(tag){
     const tagSeparated = tag.split(',');
@@ -26,7 +32,8 @@ export function NewToolsModal({isOpen, onRequestClose, createTools}){
       title,
       link,
       description,
-      tags: tagsFormat
+      tags: tagsFormat,
+      user_id: user.id,
     })
     setTitle('');
     setLink('');

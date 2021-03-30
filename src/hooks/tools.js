@@ -9,7 +9,7 @@ export function ToolsProvider({ children }) {
     api.get('/').then(response => {
       setTools(response.data);
     })
-  }, [tools]);
+  }, []);
 
   async function createTools(toolsInput){
     await api.post('/', {...toolsInput});

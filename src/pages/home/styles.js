@@ -120,10 +120,23 @@ export const ToolsPost = styled.div`
 export const Post = styled.div`
   border-bottom: 1px solid #bdbdbd;
   padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  small{
+    text-align: end;
+    color: #15141994;
+    span{
+      color: #5965e0b8;
+    }
+  }
 
   h3{
     font-size: 2rem;
     margin-bottom: 0.5rem;
+    color: #5965e0;
+    text-decoration: underline;
   }
 
   p{

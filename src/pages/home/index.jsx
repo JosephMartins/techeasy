@@ -6,9 +6,9 @@ import { useTools } from '../../hooks/tools';
 
 export function Home(){
   const [isNewToolsModal, setIsNewToolsModal] = useState(false);
-  const { signOut } = useAuth();
+  const { signOut} = useAuth();
   const { tools, createTools } = useTools();
-  
+    console.log(tools)
   function handleSignOut(){
     return signOut()
   }
@@ -54,13 +54,15 @@ export function Home(){
         <ToolsPost>
         {tools.map(tool => (
           <Post key={tool.id}>
-            <h3>{tool.title}</h3>
+            <h3><a href={tool.link} target="_blank" rel="noreferrer">{tool.title}</a></h3>
             <p>{tool.description}</p>
             <ul>
             {tool.tags.map(tag => (
               <li key={tag}>#{tag}</li>
             ))}
             </ul>
+
+            <small><span>Posted by</span> {tool.user}</small>
           </Post>
         ))}
       </ToolsPost>
