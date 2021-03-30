@@ -14,7 +14,7 @@ Projeto encontra-se em andamento
 clone o projeto
 
 ``` 
-git clone https://github.com/JosephMartins/animals-fantastics.git
+git clone https://github.com/JosephMartins/techeasy.git
 ```
 >> Execute o seguinte comando para instalaçao de dependencias:
 ``` 
