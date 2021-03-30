@@ -7,6 +7,17 @@
 ## Deploy no Netlify:
 https://techeasy.netlify.app/
 
+##Techs utilizadas
+
+> React-router-dom
+> ReactJS
+> Axios
+> React Modal
+> Styled-components
+> CSS
+> HTML
+> ContextAPI
+
 Projeto encontra-se em andamento 
 
 ## Para executar a aplicação em sua máquina
