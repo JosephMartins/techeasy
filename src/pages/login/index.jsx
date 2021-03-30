@@ -19,12 +19,11 @@ export function Login(){
       password: password,
     });
     history.push('/home');
-    setError('');
-    setEmail('');
-    setPassword('');
+    
+    return
     }catch(err){
       setError('Credenciais inválidas');
-      return;
+      return err;
     }
   }
 

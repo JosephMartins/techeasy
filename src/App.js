@@ -5,12 +5,12 @@ import GlobalStyle from './styles/globalStyle';
 
 function App() {
   return (
-    <AuthProvider>
       <BrowserRouter>
-        <Routes />
+        <AuthProvider>
+          <Routes />
+        </AuthProvider>
         <GlobalStyle />
       </BrowserRouter>
-    </AuthProvider>
 
   );
 }

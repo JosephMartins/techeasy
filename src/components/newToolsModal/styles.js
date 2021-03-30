@@ -10,7 +10,7 @@ h2{
 input{
   width: 100%;
   padding: 0 1.5rem;
-  height: 4rem;
+  height: 3rem;
   
   font-size: 1rem;
   font-weight: 400;

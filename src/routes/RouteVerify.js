@@ -1,5 +1,5 @@
-import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
+import React  from 'react';
+import { Route as ReactDOMRoute, Redirect } from 'react-router-dom';
 
 import { useAuth } from '../hooks/auth';
 
@@ -8,10 +8,11 @@ function RouteVerify({
   component: Component,
   ...rest
 }){
-  const { user } = useAuth();
+
+   const { user } =  useAuth();
 
   return (
-    <Route
+    <ReactDOMRoute
       {...rest}
       render={({ location }) => {
         return isPrivate === !!user ? (

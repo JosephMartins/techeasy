@@ -5,8 +5,8 @@ const AuthContext = createContext({});
 
 function AuthProvider({ children }) {
   const [data, setData] = useState(() => {
-    const token = localStorage.getItem('@GoBarber:token');
-    const user = localStorage.getItem('@GoBarber:user');
+    const token = localStorage.getItem('@Techeasy:token');
+    const user = localStorage.getItem('@Techeasy:user');
 
     if (token && user) {
       api.defaults.headers.authorization = `Bearer ${token}`;
@@ -15,16 +15,15 @@ function AuthProvider({ children }) {
     return {};
   });
 
+
   const signIn = useCallback(async ({ email, password }) => {
     const reseponse = await api.post('sessions', { email, password });
-    console.log(reseponse)
     const { token, user } = reseponse.data;
 
     localStorage.setItem('@Techeasy:token', token);
     localStorage.setItem('@Techeasy:user', JSON.stringify(user));
 
     api.defaults.headers.authorization = `Bearer ${token}`;
-
     setData({ token, user });
   }, []);
 
@@ -56,4 +55,4 @@ function useAuth() {
   return context;
 }
 
-export { AuthProvider, useAuth };
+export { AuthProvider, useAuth};

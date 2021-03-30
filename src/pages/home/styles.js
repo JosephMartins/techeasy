@@ -83,7 +83,7 @@ export const Header = styled.div`
       
       input{
         margin-right: 0.5rem;
-
+height: 3rem;
         
       }
     }
@@ -93,7 +93,7 @@ export const Header = styled.div`
 
 export const Input = styled.div`
   input{
-    height: 2.5rem;
+    height: 3rem;
     padding: 0 0.5rem;
     outline: none;
     border-radius: 0.2rem;

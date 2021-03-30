@@ -7,19 +7,20 @@ import { useAuth } from '../../hooks/auth';
 export function Home(){
   const [isNewToolsModal, setIsNewToolsModal] = useState(false);
   const [posts, setPosts] = useState([]);
-  const { signOut } = useAuth();
+  const { signOut, user } = useAuth();
+  
 
 
   function handleSignOut(){
-    signOut()
+    return signOut()
   }
 
 
-    useEffect(() => {
+  useEffect(() => {
        api.get('/').then(response => {
-        setPosts(response.data);
-      });
-    }, []);
+      setPosts(response.data);
+    });
+  }, []);
 
     function handleOpenNewToolsModal(){
       setIsNewToolsModal(true);
@@ -51,10 +52,10 @@ export function Home(){
             </div>
             <button  onClick={handleOpenNewToolsModal} type="button">Add</button>
             <NewToolsModal 
-            isOpen={isNewToolsModal} 
-            setPosts={setPosts}
-            posts={posts}
-            onRequestClose={handleCloseNewToolsModal}
+              isOpen={isNewToolsModal} 
+              setPosts={setPosts}
+              posts={posts}
+              onRequestClose={handleCloseNewToolsModal}
             />
           </form>
         </Header>
@@ -65,7 +66,7 @@ export function Home(){
             <p>{post.description}</p>
             <ul>
             {post.tags.map(tag => (
-              <li>#{tag}</li>
+              <li key={tag}>#{tag}</li>
             ))}
             </ul>
           </Post>

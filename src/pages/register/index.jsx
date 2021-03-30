@@ -26,7 +26,6 @@ export function Register(){
         password,
       });
 
-      console.log(response)
     setEmail('');
     setPassword('');
     history.push('/home');
