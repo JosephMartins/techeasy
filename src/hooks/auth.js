@@ -12,6 +12,9 @@ function AuthProvider({ children }) {
       api.defaults.headers.authorization = `Bearer ${token}`;
       return { token, user: JSON.parse(user) };
     }
+
+
+    
     return {};
   });
 
