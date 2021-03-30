@@ -7,7 +7,7 @@ import { useAuth } from '../../hooks/auth';
 export function Home(){
   const [isNewToolsModal, setIsNewToolsModal] = useState(false);
   const [posts, setPosts] = useState([]);
-  const { signOut, user } = useAuth();
+  const { signOut } = useAuth();
   
 
 
