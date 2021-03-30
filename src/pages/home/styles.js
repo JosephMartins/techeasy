@@ -18,6 +18,21 @@ export const Content = styled.div`
 
 
 export const Header = styled.div`
+  .loggout-group{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    button{
+      height: 32px;
+      background: #9c4d4d;
+      border: 0;
+      border-radius: 2px;
+      color: #fff;
+      padding: 0 12px;
+      }
+  }
+
   h1{
     margin-top: 5rem;
     font-size: 3.8rem;
@@ -44,8 +59,8 @@ export const Header = styled.div`
       align-items: center;
       justify-content: center;
       width: 5rem;
-      border-radius: 0.5rem;
-      background: #5965e0;
+      border-radius: 0.2rem;
+      background: var(--blue);
       color: #fff;
       border: none;
       height: 2rem;
@@ -81,7 +96,7 @@ export const Input = styled.div`
     height: 2.5rem;
     padding: 0 0.5rem;
     outline: none;
-    border-radius: 0.5rem;
+    border-radius: 0.2rem;
     border: none;
 
 

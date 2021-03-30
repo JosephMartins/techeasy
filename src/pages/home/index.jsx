@@ -2,10 +2,17 @@ import { useEffect, useState } from 'react';
 import { api } from '../../service/api';
 import {Container, Content, Header, Input, ToolsPost, Post } from './styles';
 import {NewToolsModal} from '../../components/newToolsModal';
+import { useAuth } from '../../hooks/auth';
 
 export function Home(){
   const [isNewToolsModal, setIsNewToolsModal] = useState(false);
   const [posts, setPosts] = useState([]);
+  const { signOut } = useAuth();
+
+
+  function handleSignOut(){
+    signOut()
+  }
 
 
     useEffect(() => {
@@ -27,7 +34,10 @@ export function Home(){
     <Container>
       <Content>
         <Header>
-          <h1>VUTTR</h1>
+          <div className="loggout-group">
+            <h1>VUTTR</h1>
+            <button className="loggout" onClick={handleSignOut}>Loggout</button>
+          </div>
           <h3>Very Useful Tools to Remember</h3>
           <form action="">
             <div className="input-group">

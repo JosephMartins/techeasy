@@ -42,6 +42,15 @@ export const AnimationContainer = styled.div`
   }
 
   form {
+
+    div{
+      margin-bottom: 1rem;
+      p{
+        color: #ff5c5c;
+        text-align: initial;
+      }
+    }
+
     input{
       width: 100%;
       padding: 0 1.5rem;
@@ -105,10 +114,11 @@ export const AnimationContainer = styled.div`
     height: 3rem;
     margin-top: 1.5rem;
     width: 100%;
-    background: #68e1fd;
-    border: 0;
+    background: var(--blue);
     border-radius: 0.25rem;
     text-shadow: 1px 1px 5px #000;
+    box-shadow: 1px -1px  4px #68e1fd52;
+    border: none;
     color: #fff;
   }
 `;
