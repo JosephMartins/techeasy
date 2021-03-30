@@ -2,13 +2,12 @@ import { useState } from 'react';
 import Modal from 'react-modal';
 
 import closeImg from '../../assets/close.svg';
-import { api } from '../../service/api';
 
 
 import { Container } from './styles';
 
 
-export function NewToolsModal({isOpen, onRequestClose}){
+export function NewToolsModal({isOpen, onRequestClose, createTools}){
   const [title, setTitle] = useState('');
   const [link, setLink] = useState('');
   const [description, setDescription] = useState('');
@@ -23,12 +22,12 @@ export function NewToolsModal({isOpen, onRequestClose}){
   async function handleCreateNewTransaction(event){
     event.preventDefault();
     const tagsFormat = tagFormatted(tags);
-    await api.post('/', {
+    await createTools({
       title,
       link,
       description,
       tags: tagsFormat
-    });
+    })
     setTitle('');
     setLink('');
     setDescription('');

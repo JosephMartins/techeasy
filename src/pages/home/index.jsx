@@ -1,26 +1,18 @@
-import { useEffect, useState } from 'react';
-import { api } from '../../service/api';
+import { useState } from 'react';
 import {Container, Content, Header, Input, ToolsPost, Post } from './styles';
 import {NewToolsModal} from '../../components/newToolsModal';
 import { useAuth } from '../../hooks/auth';
+import { useTools } from '../../hooks/tools';
 
 export function Home(){
   const [isNewToolsModal, setIsNewToolsModal] = useState(false);
-  const [posts, setPosts] = useState([]);
   const { signOut } = useAuth();
+  const { tools, createTools } = useTools();
   
-
-
   function handleSignOut(){
     return signOut()
   }
 
-
-  useEffect(() => {
-       api.get('/').then(response => {
-      setPosts(response.data);
-    });
-  }, []);
 
     function handleOpenNewToolsModal(){
       setIsNewToolsModal(true);
@@ -53,19 +45,19 @@ export function Home(){
             <button  onClick={handleOpenNewToolsModal} type="button">Add</button>
             <NewToolsModal 
               isOpen={isNewToolsModal} 
-              setPosts={setPosts}
-              posts={posts}
+              tools={tools}
+              createTools={createTools}
               onRequestClose={handleCloseNewToolsModal}
             />
           </form>
         </Header>
         <ToolsPost>
-        {posts.map(post => (
-          <Post key={post.id}>
-            <h3>{post.title}</h3>
-            <p>{post.description}</p>
+        {tools.map(tool => (
+          <Post key={tool.id}>
+            <h3>{tool.title}</h3>
+            <p>{tool.description}</p>
             <ul>
-            {post.tags.map(tag => (
+            {tool.tags.map(tag => (
               <li key={tag}>#{tag}</li>
             ))}
             </ul>
